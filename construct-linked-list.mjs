@@ -1,11 +1,11 @@
-class Node {
+export class Node {
   constructor(element) {
     this.element = element;
     this.next = null;
   }
 }
 
-class linkedList {
+export class LinkedList {
   constructor() {
     this.head = null;
     this.size = 0;
@@ -100,24 +100,34 @@ class linkedList {
     }
     return -1;
   }
+
+  printList() {
+    let currentNode = this.head;
+    const values = [];
+    while (currentNode) {
+      values.push(currentNode.element);
+      currentNode = currentNode.next;
+    }
+    console.log(values.join(" -> "));
+  }
 }
 
-let l1 = new linkedList();
-l1.add(5);
-l1.add(7);
-l1.add(9);
-l1.add(10);
+// let l1 = new LinkedList();
+// l1.add(5);
+// l1.add(7);
+// l1.add(9);
+// l1.add(10);
 
-l1.insertAt(8, 2);
+// l1.insertAt(8, 2);
 
-const removedElement = l1.removeFrom(2);
-console.log("Removed element:", removedElement);
+// const removedElement = l1.removeFrom(2);
+// console.log("Removed element:", removedElement);
 
-l1.insertAt(8, 2);
+// l1.insertAt(8, 2);
 
-const removedIdx = l1.removeElement(8);
-console.log("Removed Idx:", removedIdx);
+// const removedIdx = l1.removeElement(8);
+// console.log("Removed Idx:", removedIdx);
 
-console.log("Size of linked list:", l1.size);
+// console.log("Size of linked list:", l1.size);
 
-console.log(l1);
+// console.log(l1);
