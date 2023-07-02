@@ -130,6 +130,24 @@ class DoublyLinkedList {
 
     this.size--;
   }
+
+  reverse() {
+    let current = this.head;
+    let head = this.head;
+    let temp = null;
+
+    while (current !== null) {
+      temp = current.prev;
+      current.prev = current.next;
+      current.next = temp;
+      current = current.prev;
+    }
+
+    if (temp !== null) {
+      this.head = temp.prev;
+      this.tail = head;
+    }
+  }
 }
 
 let dl1 = new DoublyLinkedList();
@@ -144,5 +162,6 @@ dl1.pop();
 dl1.shift();
 dl1.insertAt(3, 4.1);
 dl1.removeAt(2);
+dl1.reverse();
 
 console.log(dl1);
