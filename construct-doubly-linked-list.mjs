@@ -1,4 +1,4 @@
-class Node {
+export class Node {
   constructor(element) {
     this.element = element;
     this.next = null;
@@ -6,7 +6,7 @@ class Node {
   }
 }
 
-class DoublyLinkedList {
+export class DoublyLinkedList {
   constructor() {
     this.head = null;
     this.tail = null;
@@ -164,4 +164,4 @@ dl1.insertAt(3, 4.1);
 dl1.removeAt(2);
 dl1.reverse();
 
-console.log(dl1);
+// console.log(dl1);
